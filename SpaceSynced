@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Sync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #000;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    /* Primary space background */
+    .space-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://cdn.pixabay.com/photo/2013/07/18/10/56/space-164147_1280.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: -2;
+    }
+    
+    /* Secondary space overlay for depth */
+    .space-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.4;
+      z-index: -1;
+    }
+    
+    /* Stars animation layer */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://raw.githubusercontent.com/kodhus/animated-stars-background/master/stars.svg') repeat;
+      z-index: -1;
+      animation: scrollStars 100s linear infinite;
+    }
+    
+    @keyframes scrollStars {
+      from { background-position: 0 0; }
+      to { background-position: 10000px 10000px; }
+    }
+    
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      color: #00ffff;
+      padding: 40px 0 20px 0;
+      text-align: center;
+      box-shadow: 0 0 20px #00ffff;
+      position: relative;
+    }
+    
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      position: relative;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3em;
+      transition: transform 0.3s ease, color 0.3s ease;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    
+    h1:hover {
+      transform: scale(1.1);
+      color: #ffffff;
+    }
+    
+    h2 {
+      color: #66fcf1;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    h2:hover {
+      transform: scale(1.05);
+      color: #00ffff;
+    }
+    
+    .event {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #444;
+    }
+    
+    .source-link {
+      color: #00ffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .source-link:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
+    
+    footer {
+      background-color: rgba(11, 61, 145, 0.8);
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+      box-shadow: 0 -2px 10px #00ffff;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background layers -->
+  <div class="space-bg"></div>
+  <div class="space-overlay"></div>
+  <div class="stars"></div>
+  
+  <header>
+    <h1>Space Synced</h1>
+    <p>2024–2025 | Curated by Space Synced</p>
+  </header>
+  <main>
+    <div class="event">
+      <h2>Galactic 06 – Virgin Galactic (January 26, 2024)</h2>
+      <p>Virgin Galactic launched its sixth suborbital flight, carrying the first Ukrainian woman in space. A major milestone in commercial tourism.</p>
+      <a class="source-link" href="https://en.wikipedia.org/wiki/Galactic_06" target="_blank">Read More</a>
+    </div>
+    <div class="event">
+      <h2>NS-25 – Blue Origin (May 19, 2024)</h2>
+      <p>Blue Origin's return to crewed suborbital spaceflight included 90-year-old Ed Dwight, the first Black astronaut candidate.</p>
+      <a class="source-link" href="https://amp.cnn.com/cnn/2024/05/19/world/blue-origin-rocket-ns-25-mission-scn" target="_blank">Read More</a>
+    </div>
+    <div class="event">
+      <h2>Galactic 07 – Virgin Galactic (June 8, 2024)</h2>
+      <p>Final flight of VSS Unity marked the end of an era and a transition to Virgin Galactic's new spaceplane fleet.</p>
+      <a class="source-link" href="https://en.wikipedia.org/wiki/Galactic_07" target="_blank">Read More</a>
+    </div>
+    <div class="event">
+      <h2>Starship Flight Test 5 – SpaceX (October 13, 2024)</h2>
+      <p>SpaceX successfully caught the Super Heavy booster using Mechazilla — a leap forward in rocket reusability.</p>
+      <a class="source-link" href="https://en.wikipedia.org/wiki/Starship_flight_test_5" target="_blank">Read More</a>
+    </div>
+    <div class="event">
+      <h2>Starship Test Flight – SpaceX (November 19, 2024)</h2>
+      <p>Starship's test flight splashed down in the Gulf of Mexico, marking continued progress toward reusable orbital transport.</p>
+      <a class="source-link" href="https://nypost.com/2024/11/19/us-news/elon-musks-starship-soars-in-successful-test-flight-but-opts-out-of-mechazilla-catch/" target="_blank">Read More</a>
+    </div>
+    <div class="event">
+      <h2>New Glenn Launch Prep – Blue Origin (December 2024)</h2>
+      <p>Blue Origin completes rollout and testing of the New Glenn orbital rocket in preparation for its first launch.</p>
+      <a class="source-link" href="https://en.wikipedia.org/wiki/2024_in_spaceflight" target="_blank">Read More</a>
+    </div>
+    <h2>Social Media & Metrics</h2>
+    <p>Total Impressions: 10M+ | Engagement Rate: 7.2% | Follower Growth: +25%</p>
+    <p>Top Hashtags: #CommercialSpaceflight, #SpaceTourism, #ReusableRockets</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 Space Synced</p>
+  </footer>
+</body>
+</html>
